@@ -1,0 +1,17 @@
+{
+  "rootAPI": "/api/v1/",
+  "port": "3000",
+  "db": {
+    "host": "localhost",
+    "database": "nodejsudemy",
+    "user": "root",
+    "password": "root"
+  },
+  "errors" : {
+    "wrongID": "Wrong ID !",
+    "wrongMaxValue": "Wrong max value",
+    "nameAlreadyTaken": "Name already taken",
+    "noNameValue": "No name value",
+    "sameName": "Same name"
+  }
+}
