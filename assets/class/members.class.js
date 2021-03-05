@@ -82,7 +82,6 @@ let Members = class {
     static update(id, name) {
 
         return new Promise((callback) => {
-
             if(name !== undefined && name.trim() !== '') {
                 name = name.trim()
 
@@ -114,7 +113,6 @@ let Members = class {
     static delete(id) {
 
         return new Promise((callback) => {
-
             db.query('SELECT * FROM members WHERE id = ?', [id])
                 .then((result) => {
                     if(result[0] !== undefined) {

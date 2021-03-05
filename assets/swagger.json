@@ -1,0 +1,131 @@
+{
+  "definitions": {},
+  "info": {
+    "title": "nodejs-udemy",
+    "version": "1.0.0",
+    "license": {
+      "name": "ISC"
+    },
+    "description": "Specification JSONs: [v2](/api-spec/v2), [v3](/api-spec/v3)."
+  },
+  "paths": {
+    "/api/v1/members/{id}": {
+      "get": {
+        "summary": "/api/v1/members/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of pets.",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/pet"
+              }
+            }
+          }
+        },
+        "tags": []
+      },
+      "put": {
+        "summary": "/api/v1/members/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of pets.",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/pet"
+              }
+            }
+          }
+        },        "tags": []
+      },
+      "delete": {
+        "summary": "/api/v1/members/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of pets.",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/pet"
+              }
+            }
+          }
+        },        "tags": []
+      }
+    },
+    "/api/v1/members": {
+      "get": {
+        "summary": "/api/v1/members",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A list of pets.",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/pet"
+              }
+            }
+          }
+        },        "tags": []
+      },
+      "post": {
+        "summary": "/api/v1/members",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A list of pets.",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/pet"
+              }
+            }
+          }
+        },        "tags": []
+      }
+    }
+  },
+  "swagger": "2.0",
+  "tags": []
+}

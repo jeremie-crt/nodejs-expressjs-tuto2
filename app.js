@@ -2,9 +2,14 @@ const config = require('./assets/config.json')
 const {success, error, checkAndChange} = require('./assets/functions')
 
 const express = require('express')
+//automatically generate OpenAPI (Swagger) specification for existing ExpressJS 4.x REST API applications;
+// provide Swagger UI basing on generated specification.
+//const expressOasGenerator = require('express-oas-generator');
 
 const bodyParser = require('body-parser')
 const morgan = require('morgan')('dev')
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./assets/swagger.json');
 
 const mysql = require('promise-mysql')
 
@@ -22,11 +27,11 @@ mysql.createConnection({
 
     //gives info about the request url
     app.use(morgan)
-
     //Parse the data
     app.use(bodyParser.json()) // for parsing application/json
     app.use(bodyParser.urlencoded({extended: true})) // for parsing application/x-www-form-urlencoded
-
+    app.use(config.rootAPI + '/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    console.log(config.rootAPI + 'api-docs');
     let membersRouter = express.Router()
     let MembersClass = require('./assets/class/members.class')(db, config)
 
